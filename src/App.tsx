@@ -5,7 +5,6 @@ import {useEffect, useState} from "react";
 import { DataTeams } from '../models/models.ts'
 import axios from "axios";
 import EmptyPage from "./components/EmptyPage";
-import {TEAM_URL_ONE, TEAM_URL_TWO, TEAM_URL_THREE} from "../data/data.ts";
 
 
 function App() {
@@ -15,11 +14,11 @@ function App() {
    async function fetchData() {
         try {
             const response = await Promise.all([
-                axios.get(TEAM_URL_ONE),
-                axios.get(TEAM_URL_TWO),
-                axios.get(TEAM_URL_THREE)
+                axios.get('/data/team1.json'),
+                axios.get('/data/team2.json'),
+                axios.get('/data/team3.json')
             ])
-            return await Promise.all(response.map(item => item.data))
+            return await Promise.all(response.map(item => item.data.response))
         } catch (err) {
             console.error('Error fetching', err);
             return null;

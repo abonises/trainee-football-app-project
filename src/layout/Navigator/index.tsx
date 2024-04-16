@@ -2,7 +2,6 @@ import {NavLink, Outlet, Route, Routes} from "react-router-dom";
 import './index.scss'
 import GameComponent from "../../components/GameComponent";
 import {DataTeams} from "../../../models/models.ts";
-import {arrayTeams} from "../../../data/data.ts";
 import {useState} from "react";
 import cn from 'classnames';
 import EmptyPage from "../../components/EmptyPage";
@@ -10,8 +9,12 @@ import EmptyPage from "../../components/EmptyPage";
 type Props = {
     data: DataTeams[] | null
 }
+
+const arrayTeams = ['team1', 'team2', 'team3']
 export default function Navigator({data}: Props) {
     const [activeTeam, setActiveTeam] = useState<boolean>(true);
+
+
 
     return (
         <div className={cn('nav-layout', !activeTeam && 'disabled')}>
