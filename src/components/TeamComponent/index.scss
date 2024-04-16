@@ -1,0 +1,33 @@
+.team-component {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .match-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 131px;
+    padding: 40px 96px;
+    border-bottom: 1px solid #353535;
+
+    .versus {
+      font-size: 85px;
+      color: #fff;
+      font-family: "Bebas Neue", cursive;
+    }
+
+    span {
+      line-height: 1.5;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      height: 30px;
+      text-overflow: ellipsis;
+    }
+  }
+
+}
